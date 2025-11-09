@@ -10,4 +10,4 @@ I enjoy experimenting with stuff that merges creativity with technical aspects.
 - Github: www.github.com/nandini-bansal
 - LinkedIn: www.linkedin.com/in/nandini-bansal-
 
-[TO-DO List for the project](todo)
+[TO-DO List for the project](todo.md)
