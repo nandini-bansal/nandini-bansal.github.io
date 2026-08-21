@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nandini Bansal — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F1E6;
+    --panel: #FBF8F0;
+    --ink: #1F2A44;
+    --ink-soft: #4B5468;
+    --copper: #B5651D;
+    --copper-soft: #D68A4A;
+    --teal: #3D6B66;
+    --line: #D8CDA9;
+    --line-strong: #C2B48A;
+    --radius: 3px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, var(--line) 28px),
+      var(--paper);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  a { color: var(--copper); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 72px 0 56px;
+  }
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .chip-icon {
+    flex-shrink: 0;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--copper);
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .hero h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+  }
+  .hero .role {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+    font-weight: 500;
+  }
+  .hero p.summary {
+    max-width: 620px;
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .meta-row span::before {
+    content: "// ";
+    color: var(--copper-soft);
+  }
+
+  /* ---------- SPINE / SECTIONS ---------- */
+  .spine {
+    border-left: 3px solid var(--copper-soft);
+    margin-left: 6px;
+  }
+  section.spine-section {
+    position: relative;
+    padding: 8px 0 8px 38px;
+    margin-bottom: 46px;
+  }
+  section.spine-section::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 6px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--panel);
+    border: 3px solid var(--copper);
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin: 0 0 6px;
+  }
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about p {
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- INTERESTS ---------- */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 8px 14px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--panel);
+    color: var(--ink);
+  }
+  .tag.hobby {
+    border-style: dashed;
+    color: var(--teal);
+    border-color: var(--teal);
+  }
+  .tag.hobby::after {
+    content: " · hobby";
+    color: var(--ink-soft);
+    font-size: 11px;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 640px) {
+    .project-grid { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--panel);
+    border: 1.5px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 8px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .card p {
+    margin: 0 0 10px;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+  .card .stack {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--copper);
+  }
+  .card .repo-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--teal);
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 640px) {
+    .skill-groups { grid-template-columns: 1fr; }
+  }
+  .skill-group h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+  .skill-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .skill-group li {
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--line-strong);
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .skill-group li:last-child { border-bottom: none; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-panel {
+    background: var(--panel);
+    border: 1.5px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 26px 26px;
+  }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+  }
+  footer {
+    text-align: center;
+    padding: 34px 0 50px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+      animation: fadeUp 0.7s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--copper);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero fade-in">
+    <div class="hero-top">
+      <svg class="chip-icon" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="32" height="32" rx="2" fill="#FBF8F0" stroke="#B5651D" stroke-width="2.5"/>
+        <rect x="28" y="28" width="16" height="16" rx="1" fill="none" stroke="#3D6B66" stroke-width="2"/>
+        <g stroke="#B5651D" stroke-width="2.5" stroke-linecap="round">
+          <line x1="20" y1="28" x2="10" y2="28"/>
+          <line x1="20" y1="36" x2="10" y2="36"/>
+          <line x1="20" y1="44" x2="10" y2="44"/>
+          <line x1="52" y1="28" x2="62" y2="28"/>
+          <line x1="52" y1="36" x2="62" y2="36"/>
+          <line x1="52" y1="44" x2="62" y2="44"/>
+          <line x1="28" y1="20" x2="28" y2="10"/>
+          <line x1="36" y1="20" x2="36" y2="10"/>
+          <line x1="44" y1="20" x2="44" y2="10"/>
+          <line x1="28" y1="52" x2="28" y2="62"/>
+          <line x1="36" y1="52" x2="36" y2="62"/>
+          <line x1="44" y1="52" x2="44" y2="62"/>
+        </g>
+      </svg>
+      <div>
+        <p class="eyebrow">// portfolio</p>
+        <h1>NANDINI BANSAL</h1>
+        <p class="role">Electronics and Communication Engineering Student</p>
+      </div>
+    </div>
+    <p class="summary" style="margin-top:26px;">
+      Second-year ECE student who likes taking ideas from breadboard to working prototype. I'm into hardware integration, sensor-based systems, and reading up on applied research along with interests like Arduino, Circuit Designing, Game Development and Digital Art that keep things fun.
+    </p>
+    <div class="meta-row">
+      <span>Ludhiana, Punjab, India</span>
+      <span>GNDEC — ECE, 2nd Year</span>
+      <span>Open to internships</span>
+    </div>
+  </div>
+
+  <div class="spine">
+
+    <!-- ABOUT -->
+    <section class="spine-section about" id="about">
+      <p class="section-label">01 — About</p>
+      <h2>A bit about me</h2>
+      <p>
+        I'm an Electronics &amp; Communication Engineering student who enjoys the hands-on side of engineering — wiring up sensors, debugging circuits, and figuring out why a signal isn't doing what the datasheet promised. I also spend time reading and summarizing research papers in areas I'm curious about, and I like documenting what I build so it's easy for others (and future-me) to follow.
+      </p>
+      <p>
+        Outside coursework, I dabble in a few things: Arduino-based mini projects, and casually exploring game development and pixel art as a creative outlet.
+      </p>
+    </section>
+
+    <!-- INTERESTS -->
+    <section class="spine-section" id="interests">
+      <p class="section-label">02 — Interests</p>
+      <h2>What I'm curious about</h2>
+      <div class="tag-cloud">
+        <span class="tag">Hardware Integration</span>
+        <span class="tag">Arduino &amp; Microcontrollers</span>
+        <span class="tag">Circuit Designing</span>
+        <span class="tag">PCB Designing</span>
+        <span class="tag">Reading Research Papers</span>
+        <span class="tag hobby">Game Development</span>
+        <span class="tag hobby">Pixel Art</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="spine-section" id="projects">
+      <p class="section-label">03 — Projects</p>
+      <h2>Things I've worked on</h2>
+      <div class="project-grid">
+        <div class="card">
+          <p class="card-tag">Hardware</p>
+          <h3>Ultrasonic Parking Sensor</h3>
+          <p>A parking sensor using an ultrasonic sensor and three LEDs that change based on how close an object is. The LED blinks blue when the object is far away, yellow when in medium range, and red when it's very close.</p>
+          <p class="stack">Arduino · Ultrasonic Sensor · LEDs</p>
+          <a class="repo-link" href="https://github.com/nandini-bansal/ultrasonic-parking-sensor" target="_blank" rel="noopener">View code →</a>
+        </div>
+        <div class="card">
+          <p class="card-tag">Hardware</p>
+          <h3>IR-Controlled LED Matrix Patterns</h3>
+          <p>An IR remote sends signals to an Arduino, which decodes them and lights up different patterns — a smiley, a heart, and more — on an 8x8 LED matrix.</p>
+          <p class="stack">Arduino · IR Sensor · LED Matrix</p>
+          <a class="repo-link" href="https://github.com/nandini-bansal/ir-remote-controlled-matrix" target="_blank" rel="noopener">View code →</a>
+        </div>
+        <div class="card">
+          <p class="card-tag">Software</p>
+          <h3>Spotify Listening Data Visualizer</h3>
+          <p>A Python project that takes your Spotify listening data and visualizes it through graphs and plots — genres, top artists, and listening trends over time.</p>
+          <p class="stack">Python · Pandas · NumPy · Matplotlib</p>
+          <a class="repo-link" href="https://github.com/nandini-bansal/spotify_data_visualization" target="_blank" rel="noopener">View code →</a>
+        </div>
+        <div class="card">
+          <p class="card-tag">Research — In Progress</p>
+          <h3>Role of AI in Electronic Devices</h3>
+          <p>Currently writing my first review paper, exploring how AI is being integrated into and reshaping electronic devices.</p>
+          <p class="stack">Review Paper</p>
+        </div>
+        <div class="card">
+          <p class="card-tag">Coursework</p>
+          <h3>Relevant Coursework</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px; line-height:1.9;">
+            <li>Electronic Devices and Circuits</li>
+            <li>Probability and Random Processes</li>
+            <li>Signals and Systems</li>
+            <li>Digital System Design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="spine-section" id="skills">
+      <p class="section-label">04 — Skills</p>
+      <h2>Toolbox</h2>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h4>Hardware &amp; Tools</h4>
+          <ul>
+            <li>Arduino / Microcontrollers</li>
+            <li>Circuit Design &amp; Breadboarding</li>
+            <li>PCB Designing</li>
+            <li>Command Line (CLI)</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Languages &amp; Other</h4>
+          <ul>
+            <li>C++ / Python</li>
+            <li>HTML &amp; CSS (basics)</li>
+            <li>Technical Writing &amp; Documentation</li>
+            <li>Godot — Currently Learning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="spine-section" id="contact">
+      <p class="section-label">05 — Contact</p>
+      <h2>Get in touch</h2>
+      <div class="contact-panel">
+        <p style="margin:0; color:var(--ink-soft); font-size:14.5px;">Open to internships, research assistantships, and collaborations. Reach out anytime.</p>
+        <div class="contact-links">
+          <a href="mailto:nandinibansa040@gmail.com">nandinibansa040@gmail.com</a>
+          <a href="https://linkedin.com/in/nandini-bansal-/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/nandini-bansal" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    Built with care · Last updated Month Year
+  </footer>
+
+</div>
+
+</body>
+</html>
