@@ -19,11 +19,8 @@
     --line-strong: #C2B48A;
     --radius: 3px;
   }
-
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     margin: 0;
     background:
@@ -35,18 +32,14 @@
     font-family: 'Work Sans', sans-serif;
     line-height: 1.6;
   }
-
   .mono { font-family: 'JetBrains Mono', monospace; }
-
   a { color: var(--copper); text-decoration: none; }
   a:hover { text-decoration: underline; }
-
   .wrap {
     max-width: 880px;
     margin: 0 auto;
     padding: 0 28px;
   }
-
   /* ---------- HERO ---------- */
   .hero {
     padding: 72px 0 56px;
@@ -101,7 +94,6 @@
     content: "// ";
     color: var(--copper-soft);
   }
-
   /* ---------- SPINE / SECTIONS ---------- */
   .spine {
     border-left: 3px solid var(--copper-soft);
@@ -137,14 +129,12 @@
     margin: 0 0 18px;
     color: var(--ink);
   }
-
   /* ---------- ABOUT ---------- */
   .about p {
     color: var(--ink-soft);
     max-width: 640px;
     margin: 0 0 14px;
   }
-
   /* ---------- INTERESTS ---------- */
   .tag-cloud {
     display: flex;
@@ -170,7 +160,6 @@
     color: var(--ink-soft);
     font-size: 11px;
   }
-
   /* ---------- PROJECTS ---------- */
   .project-grid {
     display: grid;
@@ -216,7 +205,6 @@
     font-size: 12.5px;
     color: var(--teal);
   }
-
   /* ---------- SKILLS ---------- */
   .skill-groups {
     display: grid;
@@ -246,7 +234,6 @@
     color: var(--ink);
   }
   .skill-group li:last-child { border-bottom: none; }
-
   /* ---------- CONTACT ---------- */
   .contact-panel {
     background: var(--panel);
@@ -269,7 +256,6 @@
     font-size: 12px;
     color: var(--ink-soft);
   }
-
   @media (prefers-reduced-motion: no-preference) {
     .fade-in {
       animation: fadeUp 0.7s ease both;
@@ -279,7 +265,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
   }
-
   :focus-visible {
     outline: 2px solid var(--copper);
     outline-offset: 3px;
@@ -287,9 +272,7 @@
 </style>
 </head>
 <body>
-
 <div class="wrap">
-
   <!-- HERO -->
   <div class="hero fade-in">
     <div class="hero-top">
@@ -326,9 +309,7 @@
       <span>Open to internships</span>
     </div>
   </div>
-
   <div class="spine">
-
     <!-- ABOUT -->
     <section class="spine-section about" id="about">
       <p class="section-label">01 — About</p>
@@ -340,7 +321,6 @@
         Outside coursework, I dabble in a few things: Arduino-based mini projects, exploring game development, pixel art and reading psychological thriller as a creative outlet.
       </p>
     </section>
-
     <!-- INTERESTS -->
     <section class="spine-section" id="interests">
       <p class="section-label">02 — Interests</p>
@@ -355,7 +335,6 @@
         <span class="tag hobby">Digital Art</span>
       </div>
     </section>
-
     <!-- PROJECTS -->
     <section class="spine-section" id="projects">
       <p class="section-label">03 — Projects</p>
@@ -372,7 +351,7 @@
           <p class="card-tag">Hardware</p>
           <h3>Coincidence Counter</h3>
           <p>Two sensors detect events independently. An LED fires only when both sensors trigger within a short time window, simulating how real particle detectors confirm a genuine event by requiring signals from multiple detector layers to arrive nearly simultaneously (rejecting random noise that only hits one sensor). This one uses 2 sensors to visualize the idea.</p>
-          <p class="stack">Arduino Uno · IR Obstacle Avoidance Sensor(LM393) · LEDs</p>
+          <p class="stack">Arduino Uno · IR Obstacle Avoidance Sensor (LM393) · LEDs</p>
           <a class="repo-link" href="https://github.com/nandini-bansal/coincidence-counter" target="_blank" rel="noopener">View code →</a>
         </div>
         <div class="card">
@@ -407,7 +386,6 @@
         </div>
       </div>
     </section>
-
     <!-- SKILLS -->
     <section class="spine-section" id="skills">
       <p class="section-label">04 — Skills</p>
@@ -433,7 +411,6 @@
         </div>
       </div>
     </section>
-
     <!-- CONTACT -->
     <section class="spine-section" id="contact">
       <p class="section-label">05 — Contact</p>
@@ -447,14 +424,10 @@
         </div>
       </div>
     </section>
-
   </div>
-
   <footer>
-    Built with love <3 · Last updated August 2026
+    Built with love &lt;3 · Last updated August 2026
   </footer>
-
 </div>
-
 </body>
 </html>
